@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function Modal({ toggleModal, largeImage }) {
   useEffect(() => {
-    const handleKeyDown = e => e.code === 'Escape' && this.props.toggleModal();
+    const handleKeyDown = e => e.code === 'Escape' && toggleModal();
 
     window.addEventListener('keydown', handleKeyDown);
 
@@ -14,7 +14,7 @@ export default function Modal({ toggleModal, largeImage }) {
   }, [toggleModal]);
 
   const handleBackdropClick = e => {
-    e.target === e.currentTarget && this.props.toggleModal();
+    e.target === e.currentTarget && toggleModal();
   };
   return (
     <div className={style.Overlay} onClick={handleBackdropClick}>
